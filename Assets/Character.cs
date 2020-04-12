@@ -5,7 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public float Speed { get; set; }
+    [SerializeField] float Speed;
 
     public void MoveCharacter(Vector2 direction)
     {

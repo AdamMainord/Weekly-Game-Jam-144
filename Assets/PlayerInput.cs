@@ -9,7 +9,9 @@ public class PlayerInput : MonoBehaviour
     public float Vertical { get; private set; }
     public bool Jumping { get; private set; }
 
-    public static event Action OnJump;
+    public event Action OnJump;
+
+    public event Action ChangeForeground;
 
     private void Update()
     {
@@ -20,6 +22,11 @@ public class PlayerInput : MonoBehaviour
         if(Jumping && OnJump != null)
         {
             OnJump();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ChangeForeground();
         }
         
     }

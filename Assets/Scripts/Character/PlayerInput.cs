@@ -10,24 +10,27 @@ public class PlayerInput : MonoBehaviour
     public bool Jumping { get; private set; }
 
     public event Action OnJump;
+<<<<<<< HEAD:Assets/PlayerInput.cs
 
-    public event Action ChangeForeground;
+   // public event Action ChangeForeground;
+=======
+>>>>>>> feed50c46aab1d5e9b9e3a2ef16b4dcb8a35ddfb:Assets/Scripts/Character/PlayerInput.cs
 
     private void Update()
     {
         Horizontal = Input.GetAxis("Horizontal");
         Vertical = Input.GetAxis("Vertical");
-        Jumping = Input.GetKeyDown(KeyCode.Space);
+        Jumping = Input.GetKey(KeyCode.Space);
 
         if(Jumping && OnJump != null)
         {
             OnJump();
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            ChangeForeground();
-        }
+       // if (Input.GetKeyDown(KeyCode.E))
+       // {
+       //     ChangeForeground();
+       // }
         
     }
 }
